@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX 100001
+#define ILLEGAL -1
+#define TRUE 1
+#define FALSE 0
+
+void init(int* p_array, int* r_size, int N){
+	if(!p_array || !r_size ||(N <= 0)){
+		return;
+	}
+	
+}
