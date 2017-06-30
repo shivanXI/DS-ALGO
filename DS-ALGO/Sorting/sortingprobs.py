@@ -9,3 +9,19 @@ def CheckDuplicatesBrute(A):
 				return;
 	print("No Dexists")
 
+def CheckWhoWinsTheElection(A):
+	A.sort()
+	counter  = maxCounter = 0
+	candidate = maxCandidate  = A[0]
+
+	for i in range(0, len(A)):
+		if(A[i] == candidate):
+			counter += 1
+		else:
+			counter = 1
+			candidate = A[i]
+
+		if(counter > maxCounter):
+			maxCandidate = A[i]
+			maxCounter = counter
+	print maxCandidate, maxCounter
