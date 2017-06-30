@@ -76,4 +76,30 @@ class LinkedListSortWithMergeSort:
 		list2 = self.sort(list2, size-size//2)
 		return self.merge(list1, size//2, list2, size-size//2)
 	def merge(self,list1, sizeList1, list2, sizeList2):
-		
+		dummy = ListNode(0)
+		list_o  = dummy
+		pointer1 = 0
+		pointer2 = 0
+		while pointer1 < sizeList1 and pointer2 < sizeList2:
+			if list1.data < list2.data:
+				list_o.next = list1
+				list1 = list1.next
+				pointer1 += 1
+			else:
+				list_o.next = list2
+				list2 = list2.next
+				pointer2 += 1
+			list_o = list_o.next
+		while pointer1 < sizeList1:
+				list_o.next = list1
+				list1 = list1.next
+				pointer1 += 1
+				list_o = list_o.next
+		while pointer2 < sizeList2:
+				list_o.next = list2
+				list2 = list2.next
+				pointer2 += 1
+				list_o = list_o.next
+		list_o.next = None
+		return dummy.next
+
