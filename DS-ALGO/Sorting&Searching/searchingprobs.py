@@ -41,3 +41,20 @@ def MaxRepititionEfficient(A):
 			max = A[i]/n
 			maxIndex = i
 	print max, maxIndex
+
+#4
+def FirstRepeatedElementAmongRepeatedElementsHash(A):
+	table = {}
+	max = 0
+	for element in A:
+		if element in table and table[element] == 1:
+			table[element] = -2
+		elif element in table and table[element] < 0:
+			table[element] -= 1
+		else:
+			table[element] = 0
+	for element in A:
+		if table[element] < max:
+			max = table[element]
+			maxRepeatedElement = element
+	print maxRepeatedElement, abs(max), "times"
