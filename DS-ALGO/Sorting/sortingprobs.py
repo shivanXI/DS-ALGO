@@ -103,3 +103,31 @@ class LinkedListSortWithMergeSort:
 		list_o.next = None
 		return dummy.next
 
+#5
+class ListNode:
+	def __init__(self, x):
+		self.data = x
+		self.next = None
+def Qsort(first, last):
+	lesHead = lesTail  = None
+	equHead = equTail = None
+	larHead = larTail = None
+	current = first
+	if(current == None):
+		return
+	pivot  = current.data
+	Append(current, equHead, equTail)
+	while(current != None):
+		info = current.data
+		if(info < pivot):
+			Append(current, lesHead, lesTail)
+		elif(info > pivot):
+			Append(current, larHead, larTail)
+		else:
+			Append(current, equHead, equTail)
+	Quicksort(lesHead, lesTail)
+	Quicksort(larHead, larTail)
+	Join(lesHead,lesTail, equHead, equTail)
+	Join(equHead, equTail, larHead, larTail)
+	first = lesHead
+	last = larTail
