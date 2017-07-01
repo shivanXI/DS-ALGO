@@ -12,3 +12,20 @@ def CheckDuplicateNegationTechnique(A):
 		else:
 			A[A[i]] = -A[A[i]]
 	print ("No duplicates")
+
+#2
+def MaxRepititionWithHash(A):
+	table = {}
+	max = 0
+	for element in A:
+		if element in table:
+			table[element] += 1
+		elif element != " ":
+			table[element] = 1
+		else:
+			table[element] = 0
+	for element in A:
+		if table[element] > max:
+			max  =  table[element]
+			maxRepeatedElementi = element
+	print maxRepeatedElementi, max, "times"
