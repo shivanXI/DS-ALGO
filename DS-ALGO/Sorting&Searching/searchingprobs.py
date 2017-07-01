@@ -29,3 +29,15 @@ def MaxRepititionWithHash(A):
 			max  =  table[element]
 			maxRepeatedElementi = element
 	print maxRepeatedElementi, max, "times"
+
+#3
+def MaxRepititionEfficient(A):
+	n = len(A)
+	max = 0
+	for i in range(0, len(A)):
+		A[A[i]%n] += n
+	for i in range(0, len(A)):
+		if(A[i]/n > max):
+			max = A[i]/n
+			maxIndex = i
+	print max, maxIndex
