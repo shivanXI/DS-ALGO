@@ -131,3 +131,6 @@ def Qsort(first, last):
 	Join(equHead, equTail, larHead, larTail)
 	first = lesHead
 	last = larTail
+
+#6
+
