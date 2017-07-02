@@ -35,3 +35,15 @@ class Hash:
 	def text(self):
 		return self.str[self.init:self.end]
 
+#2
+def prefixTable(pattern):
+	m = len(pattern)
+	F = [0] * m
+	k = 0
+	for q in range(1, m):
+		while k > 0 and pattern[k] != pattern[q]:
+			k = F[k-1]
+		if pattern[k] == pattern[q]:
+			k = k+1
+		F[q] = k
+	return F
