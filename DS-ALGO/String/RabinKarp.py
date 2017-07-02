@@ -25,8 +25,7 @@ class Hash:
 		self.init = 0
 		self.end = size
 	def update(self):
-		if self.end <= len(self.str)-1:
-				self.hash -= ord(self.str[self.init])
+ 				self.hash -= ord(self.str[self.init])
 				self.hash += ord(self.str[self.end])
 				self.init += 1
 				self.end += 1
@@ -60,4 +59,30 @@ def KMP(text, pattern):
 		if q == m:
 			return i - m + 1
 	return -1
-	
+
+#3
+class TSTNode:
+	def __init__(self,x):
+		self.data = x
+		self.left = None
+		self.right  = None
+		self.eq = None
+class TST:
+	def __init__(self, x = None):
+		self.root = TSTNode(None)
+		self.leaf = x
+	def search(self, seq):
+		node = self.root
+		for x in seq:
+			node = _search(node.eq,x)
+			if not node: return False
+		return _search(node.eq, self.leaf) is not None
+	def insert(self, seq):
+		node = self.root
+		for x in seq:
+			child = _search(node.eq, x)
+			if not child:
+				child = TSTNode(x)
+				node.eq = _insert(node.eq, child)
+			node = child
+
