@@ -26,14 +26,15 @@ void printLevelOrderUsingSingleQueue(node *root)
 			node *node = q.front();
 			cout << node->data ;
 			q.pop()
-			if()
+			if(node->left != NULL)
+				q.push(node->left);
+			if(node->right != NULL)
+				q.push(node->right);
+			nodeCount--;
 		}
+		cout << endl;
 	}
 }
-
-
-
-
 
 node* newNode(int data)
 {
