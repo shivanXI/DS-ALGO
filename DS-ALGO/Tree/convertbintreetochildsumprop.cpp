@@ -50,3 +50,13 @@ void increment(struct node* node, int diff)
 		increment(node->right, diff);
 	}
 }
+
+void printInorder(struct node* node)
+{
+	if (node == NULL)
+		return;
+	printInorder(node->left);
+	cout << node->data;
+	printInorder(node->right);
+}
+
