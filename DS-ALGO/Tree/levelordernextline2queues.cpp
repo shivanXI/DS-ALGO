@@ -29,6 +29,18 @@ void levelOrder2queue(Node *root)
 		}
 
 		cout << "\n";
+
+		while(!q2.empty())
+		{
+			if (q2.front()->left != NULL)
+				q1.push(q2.front()->left);
+			if (q2.front()->right != NULL)
+				q1.push(q2.front()->right);
+
+			cout << q2.front()->data <<" ";
+			q2.pop()
+		}
+		cout << "/n";
 	}
 }
 
