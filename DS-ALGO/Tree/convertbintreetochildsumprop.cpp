@@ -37,3 +37,16 @@ void convertTree(struct node* node)
 	}
 }
 
+void increment(struct node* node, int diff)
+{
+	if(node->left != NULL)
+	{
+		node->left->data = node->left->data + diff;
+		increment(node->left, diff);
+	}
+	else if (node->right != NULL)
+	{
+		node->right->data = node->right->data + diff;
+		increment(node->right, diff);
+	}
+}
