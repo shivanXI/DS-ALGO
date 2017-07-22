@@ -47,5 +47,16 @@ int main()
 		size[i] = 1;
 	}
 
-	
+	for(int i=0; i<m; i++){
+		cin>>a>>b;
+		if(find_set_name(a,b) == false)
+			union_mutual_friends(a,b);
+	}
+
+	for(int i=1; i<=n; i++)
+	{
+		cout<<size[root(i)]-1<<" ";
+	}
+	cout<<endl;
+	return 0;
 }
