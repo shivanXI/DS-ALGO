@@ -65,9 +65,13 @@ int main()
 	for(int i=0; i<q; i++){
 		cin>>a>>b;
 		make_union(array_l, size_l, size_Male, size_Female, a-1, x+b-1);
-
-		
 	}
 
-
+	for(int i=0; i<x+y; i++){
+		if(array_l[i] == i){
+			result += size_Male[i]*(long)(y-size_Female[i]);
+		}
+	}
+	cout<<result;
+	return 0;
 }
