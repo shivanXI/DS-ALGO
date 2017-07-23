@@ -26,9 +26,7 @@ void make_union(int array_l[], int size_l[], int size_Male[], int size_Female[],
 			size_Female[rb] += size_Female[ra];
 
 		}
-
 	}
-
 }
 
 int main()
@@ -54,6 +52,22 @@ int main()
 	cin>>q;
 	for(int i=0; i<q; i++){
 		cin>>a>>b;
+		make_union(array_l, size_l, size_Male, size_Female, a-1, b-1);
+	}
 
-	} 
+	cin>>q;
+	for(int i=0; i<q; i++){
+		cin>>a>>b;
+		make_union(array_l, size_l, size_Male, size_Female, x+a-1, x+b-1);
+	}
+
+	cin>>q;
+	for(int i=0; i<q; i++){
+		cin>>a>>b;
+		make_union(array_l, size_l, size_Male, size_Female, a-1, x+b-1);
+
+		
+	}
+
+
 }
