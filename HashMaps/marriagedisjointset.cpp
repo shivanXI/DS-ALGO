@@ -9,6 +9,28 @@ int root(int array_l[], int i){
 	return i;
 }
 
+void make_union(int array_l[], int size_l[], int size_Male[], int size_Female[], int a, int b){
+	int ra = root(array_l, a);
+	int rb = root(array_l, b);
+	if(ra != rb){
+		if(size[ra] > size[rb]){
+			array_l[rb] = array_l[ra];
+			size_l[ra] += size_l[rb];
+			size_Male[ra] += size_Male[rb];
+			size_Female[ra] += size_Female[rb];
+		
+		}else{
+			array_l[ra] = array_l[rb];
+			size_l[rb] += size_l[ra];
+			size_Male[rb] += size_Male[ra];
+			size_Female[rb] += size_Female[ra];
+
+		}
+
+	}
+
+}
+
 int main()
 {
 	int x,y,a,b,q;
@@ -27,5 +49,11 @@ int main()
 			size_Male[i] = 0;
 			size_Female[i] = 1;
 		}
+	}
+
+	cin>>q;
+	for(int i=0; i<q; i++){
+		cin>>a>>b;
+
 	} 
 }
