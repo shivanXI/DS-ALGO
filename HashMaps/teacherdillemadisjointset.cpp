@@ -2,14 +2,14 @@
 #define ll long long
 using namespace std;
 
-ll a[100001];
-ll s[100001];
+ll array_l[100001];
+ll size_l[100001];
 
 void init(ll int n)
 {
 	for(ll i= 1; i<=n;i++){
-		a[i] = i;
-		s[i] = 1;
+		array_l[i] = i;
+		size_l[i] = 1;
 	}
 }
 
@@ -22,23 +22,18 @@ ll int root(ll int i){
 }
 
 void make_union(int array_l[], int size_l[], int size_Male[], int size_Female[], int a, int b){
-	int ra = root(array_l, a);
-	int rb = root(array_l, b);
-	if(ra != rb){
+	ll int ra = root(x);
+	ll int rb = root(y);
 		if(size[ra] > size[rb]){
 			array_l[rb] = array_l[ra];
 			size_l[ra] += size_l[rb];
-			size_Male[ra] += size_Male[rb];
-			size_Female[ra] += size_Female[rb];
+			size_l[rb] = 1;
 		
 		}else{
 			array_l[ra] = array_l[rb];
 			size_l[rb] += size_l[ra];
-			size_Male[rb] += size_Male[ra];
-			size_Female[rb] += size_Female[ra];
-
+			size_l[ra] = 1;
 		}
-	}
 }
 
 int main()
