@@ -43,8 +43,22 @@ int main()
 	//long result = 0;
 	cin>>n>>m;
 	init(n);
-	ll int relations = m;
+	ll int relation = m;
+	while(relation--)
+	{
+		ll int x,y;
+		cin>>x>>y;
+		if(root(x) != root(y))
+		{
+			make_union(x,y);
+		}
+	}
 
-	
+	ll ways = 1;
+	for (ll int i = 1;i<=n;i++)
+	{
+		ways = (ways%1000000007*(size_l[i]%1000000007))%1000000007;
+	}
+	cout<<ways<<endl;
 	return 0;
 }
