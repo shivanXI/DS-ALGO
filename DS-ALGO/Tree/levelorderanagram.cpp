@@ -64,4 +64,18 @@ Node* newNode(int data)
 {
 	Node *temp = new Node;
 	temp->data = data;
+	temp->left = temp->right = NULL;
+	return temp;
+}
+
+int main()
+{
+	struct Node* root1 = newNode(1);
+	root1->left = newNode(3);
+
+	struct Node* root2 = newNode(1);
+	root2->left = newNode(2);
+
+	test_anagrams(root1, root2)? cout << "Yes" : cout << "No";
+	return 0;
 }
