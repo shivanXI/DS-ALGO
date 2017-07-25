@@ -51,6 +51,17 @@ bool test_anagrams(Node *root1, Node *root2)
 		}
 
 		sort(curr_level1.begin(), curr_level1.end());
-		
+		sort(curr_level2.begin(), curr_level2.end());
+
+		if(curr_level1 != curr_level2)
+			return false;
+
 	}
+	return true;
+}
+
+Node* newNode(int data)
+{
+	Node *temp = new Node;
+	temp->data = data;
 }
