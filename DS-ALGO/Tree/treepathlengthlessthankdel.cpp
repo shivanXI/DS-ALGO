@@ -32,3 +32,25 @@ Node *removeShortPathNodesUtil(Node *root, int level, int k)
 
 	return root;
 }
+
+Node *removeShortPathNodes(Node *root, int k)
+{
+	int pathLen = 0;
+	return removeShortPathNodesUtil(root, 1, k);
+}
+
+void printInorder(Node *root)
+{
+	if (root)
+	{
+		printInorder(root->left);
+		cout << root->data << " ";
+		printInorder(root->right);
+	}
+}
+
+int main()
+{
+	
+	return 0;
+}
