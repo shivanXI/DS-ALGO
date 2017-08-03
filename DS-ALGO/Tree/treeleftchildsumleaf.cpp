@@ -35,8 +35,13 @@ int leftLeavesSum(Node *root)
 			result += root->left->key;
 		else
 			result += leftLeavesSum(root->left);
-
+		result += leftLeavesSum(root->right);
 	}
 
 	return result;
+}
+
+int main()
+{
+	return 0;
 }
