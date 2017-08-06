@@ -14,3 +14,13 @@ while t > 0:
 			hsh = hsh + (j + s.index(i[j]))
 
 	print hsh * n 
+
+##############################################
+initial_check = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+for _ in range(input()):
+    strs_t = raw_input().split()
+    hsh = 0
+    for i in range(len(strs_t)):
+        for j in range(0,len(strs_t[i])):
+            hsh += j + initial_check.index(strs_t[i][j])
+    print len(strs_t) * hsh
