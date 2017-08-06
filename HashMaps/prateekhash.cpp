@@ -20,14 +20,33 @@ int main()
 		}
 
 		out = out^sum;
-		result = max()
+		result = max(result, out);
+		if(hash.find(out) != hash.end()){
+				collisions++;
+				hash[out]++;
+		}else{
+				hash[out] = 1;
+		}
 
 	}
 
+	if(collisions){
+		int count = 0;
+		auto it = hash.begin();
+		count = it->second;
+		result = it->first;
+		it++;
+		for(;it!=hash.end();it++){
+			if(it->second>count){
+				result = it->first;
+				count = it->second;
+			}else if(it->second==count){
+					result = min(result,it->first);
+				
+			}
+		}
+	}
 
-
-
-
-
+	cout << result << collisions <<endl;
 	return 0;
 }
