@@ -17,3 +17,17 @@ bool isPalindrome(string str,int L, int R)
 	return (true);
 }
 
+unsigned long long int modPow(unsigned long long int base, unsigned long long int exponent)
+{
+	if(exponent == 0)
+		return 1;
+	if(exponent == 1)
+		return base;
+
+	unsigned long long int temp = modPow(base, exponent/2);
+
+	if (exponent %2 == 0)
+		return (temp%mod * temp%mod) % mod;
+	else
+		return ((( temp%mod * temp%mod) %mod) * base%mod) % mod;
+}
