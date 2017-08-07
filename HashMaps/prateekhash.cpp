@@ -19,7 +19,7 @@ int main()
 			val/=10;
 		}
 
-		out = out^sum;
+		out = out^sum_digit_val;
 		result = max(result, out);
 		if(hash.find(out) != hash.end()){
 				collisions++;
@@ -47,6 +47,6 @@ int main()
 		}
 	}
 
-	cout << result << collisions <<endl;
+	cout << result << " "<< collisions <<endl;
 	return 0;
 }
