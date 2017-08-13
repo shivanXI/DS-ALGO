@@ -65,6 +65,17 @@ int main()
 	//Tip No.6: No. of digit in the number given N
 	int numb = floor(log10(N)) + 1;
 
+	//Tip No.7: Algorithms built-in STL
+	int x,y;
+	_gcd(x,y);
+	sort(vec.begin(), vec.end());
+	reverse(vec.begin(), vec.end());
+	cout << *max_element(vec.begin(), vec.end());
+	cout << *min_element(vec.begin(), vec.end());
+	accumulate(vec.begin(), vec.end(), 0);
+	cout << count(vec.begin(), vec.end(), 3);
+	find(vec.begin(), vec.end(), 5) != vec.end()? cout << "found":cout << "\n not found";
+
 	
 
 
