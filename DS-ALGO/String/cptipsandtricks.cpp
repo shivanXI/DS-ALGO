@@ -14,6 +14,12 @@ void printList(std::initializer_list<T>)
 		std::cout << value << " ";
 }
 
+//Tip No.7: To know whether number x is a power of 2 or not
+bool isPowerOfTwo (int x)
+{
+	return x && (!(X&(x-1)));
+}
+
 int main()
 {
 	//Tip No. 1: Range based for loop to iterate over arrays and vectors
@@ -46,7 +52,24 @@ int main()
 	cout<<'\n';
 	//using loops with macros
 
+	//Tip No.4: swapping of 2 numbers using XOR
+	a ^= b;
+	b ^= a;
+	a ^= b;
+
+	//Tip No.5: Most significant digit
+	double k = log10(N);
+	k = k - floor(k);
+	int x = pow(10, k); // x is the most significant digit of N
+
+	//Tip No.6: No. of digit in the number given N
+	int numb = floor(log10(N)) + 1;
+
 	
+
+
+
+
 
 	return 0;
 }
