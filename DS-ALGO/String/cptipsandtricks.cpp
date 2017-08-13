@@ -20,6 +20,17 @@ bool isPowerOfTwo (int x)
 	return x && (!(X&(x-1)));
 }
 
+//Tip No.8: Modulo arithmatic
+unsigned long long factorial(int n){
+	const unsigned int M = 10000000007;
+	unsigned long long f = 1;
+
+	for(int i=1; i<=n; i++)
+		f = (f*i) % M;
+
+	return f; 
+}
+
 int main()
 {
 	//Tip No. 1: Range based for loop to iterate over arrays and vectors
@@ -78,7 +89,11 @@ int main()
 	binary_search(vec.begin(), vec.end(), x);
 	cout << distance(vec.begin(), max_element(vac.begin(), vec.end()));
 	
-
+	//Tip No. 8: Modular Devision
+		//** (a+b)%c = ((a%c)+(b%c))%c
+		//** (a-b)%c = ((a%c)-(b%c))%c
+		//** (a*b)%c = ((a%c)*(b%c))%c
+		// not distributed over '/' (division)
 
 
 
