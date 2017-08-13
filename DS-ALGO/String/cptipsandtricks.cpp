@@ -75,7 +75,8 @@ int main()
 	accumulate(vec.begin(), vec.end(), 0);
 	cout << count(vec.begin(), vec.end(), 3);
 	find(vec.begin(), vec.end(), 5) != vec.end()? cout << "found":cout << "\n not found";
-
+	binary_search(vec.begin(), vec.end(), x);
+	cout << distance(vec.begin(), max_element(vac.begin(), vec.end()));
 	
 
 
