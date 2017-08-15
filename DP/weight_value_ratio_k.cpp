@@ -2,7 +2,7 @@
 using namespace std;
 
 
-int maxWeightTopDown(int wt[], int val[], int k, map<pai<int, int>, int>& mp, int last, int diff)
+int maxWeightTopDown(int wt[], int val[], int k, map<pair<int, int>, int>& mp, int last, int diff)
 {
 	if(last == -1)
 	{
