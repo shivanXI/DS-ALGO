@@ -40,6 +40,5 @@ int main()
 	cin>>N;
 	int result = power_nth(1, X, N);
 	cout<<result;
-
 	return 0;
 }
