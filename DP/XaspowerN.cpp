@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int sum,cont = 0;
+//int sum,cont = 0;
 
 
 int myPow(int x, int p) {
@@ -10,27 +10,18 @@ int myPow(int x, int p) {
   return x * myPow(x, p-1);
 }
 
-int power_nth(int index, int X, int N)
+int power_nth(int X, int N, int index = 0,int sum = 0)
 {
-	if(sum == X)
-		cont++;
-		return cont;
-		
-	if(X == 0)
-		return cont;
-	
-	for(int j = index;j<=X;j++)
-	{
-		sum += myPow(j,N);
-		X = X - sum;
-		if(sum < X)
-			power_nth(j++, X, N);
-		else if(sum > X){
-			X = X + sum;
-            sum -= myPow(j,N);
-			power_nth(j++, X, N);
-		}else return cont++;
+	int i = index + 1;
+	int result = 0;
+	int k = myPow(i,N);
+	while(k + sum < X){
+		result += power_nth(X,N,i,k+sum);
+		i++;
+		k = myPow(i,N);
 	}
+	if(k+sum == X) result++;
+	return result;
 }
 
 int main()
@@ -38,7 +29,7 @@ int main()
 	int X, N;
 	cin>>X;
 	cin>>N;
-	int result = power_nth(1, X, N);
+	int result = power_nth(X, N);
 	cout<<result;
 	return 0;
 }
