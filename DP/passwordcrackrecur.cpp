@@ -11,9 +11,9 @@ void check_pass(string p)
 			cout<<*it<<" ";
 		return;
 	}
-	
-	int m=0;i;
-	for(i=1;i<=p.length();p++)
+
+	int m=0,i;
+	for(i=1;i<=p.length();i++)
 	{
 		if(find(v.begin(),v.end(),p.substr(0,i))!=v.end())
 		{
@@ -52,6 +52,8 @@ int main()
 		getline(cin,g);
 		check_pass(g);
 		cout<<endl;
+		v.clear();
+		str.clear();
 	}
 	return 0;
 }
