@@ -16,7 +16,7 @@ int main()
 		{
 			long long int x;
 			cin>>x;
-			sum[]
+			sum[j]-=x;
 		}
 	
 	priority_queue<long long int> queue;
@@ -33,6 +33,7 @@ int main()
 	{
 		int k;
 		cin>>k;
+
 		if(k>queue.size()){
 			printf("-1\n");
 		}else{
@@ -42,7 +43,8 @@ int main()
 				temp[i] = queue.top();
 				queue.pop();
 			}
-			printf("%d\n",-queue.top());
+			printf("%lld\n",-queue.top());
+			
 			queue.pop();
 			for(int i=k-2;i>=0;i--)
 			{
