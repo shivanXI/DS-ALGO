@@ -3,6 +3,7 @@ using namespace std;
 
 int main()
 {
+	
 	char A[10001];
 	char B[10001];
 	int T;
